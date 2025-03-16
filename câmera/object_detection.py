@@ -1,3 +1,9 @@
+# Edge Impulse - OpenMV FOMO Object Detection Example
+#
+# This work is licensed under the MIT license.
+# Copyright (c) 2013-2024 OpenMV LLC. All rights reserved.
+# https://github.com/openmv/openmv/blob/master/LICENSE
+
 import sensor, image, time, os, ml, math, uos, gc
 from ulab import numpy as np
 
