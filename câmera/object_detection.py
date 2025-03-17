@@ -80,7 +80,7 @@ while(True):
     for i, detection_list in enumerate(net.predict([img], callback=fomo_post_process)):
         if i == 0: continue  # background class
         if len(detection_list) == 0: continue  # no detections for this class?
-
+    
         print("********** %s **********" % labels[i])
         for x, y, w, h, score in detection_list:
             center_x = math.floor(x + (w / 2))
