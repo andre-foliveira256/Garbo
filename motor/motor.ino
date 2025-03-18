@@ -8,7 +8,7 @@ float max_distance = 20;
 const int controlPin1 = 2;
 const int controlPin2 = 3;
 const int enablePin = 9;
-int motorSpeed = 100;
+int motorSpeed = 50;
 
 void setup() {
   pinMode(controlPin1, OUTPUT);
@@ -19,14 +19,13 @@ void setup() {
   pinMode(echoPin, INPUT);
   digitalWrite(controlPin1, HIGH);
   digitalWrite(controlPin2, LOW);
-  Serial.begin(9600);
 }
 
 void loop() {
-  distance = detectObject();
-  if (distance <= max_distance){
-    startMotor();
-  }
+  //distance = detectObject();
+  //if (distance <= max_distance){
+  startMotor();
+  //}
   delay(5000);
 }
 
