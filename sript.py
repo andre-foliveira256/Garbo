@@ -2,8 +2,8 @@ import serial
 import time
 
 # Configure the serial ports
-OPENMV_PORT = 'COM9'  # Port for OpenMV Cam
-ARDUINO_PORT = 'COM6'  # Port for Arduino
+OPENMV_PORT = 'COM10'  # Port for OpenMV Cam
+ARDUINO_PORT = 'COM12'  # Port for Arduino
 BAUD_RATE = 115200  # Match the baud rate with OpenMV and Arduino
 
 # Initialize counters for labels
@@ -39,6 +39,9 @@ def forward_data():
                                 print(f"{label} count reached {TARGET_COUNT}. Sending to Arduino...")
                                 arduino_serial.write(f"{label}\n".encode('utf-8'))
                                 print(f"Sent to Arduino: {label}")
+                                #Make the camera light up to Green
+                                openmv_serial.write("ready\n".encode('utf-8'))
+                                print(f"Sent to OpenMV: ready")
 
                                 # Reset the counter for the label
                                 label_counts[label] = 0

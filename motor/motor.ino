@@ -1,50 +1,55 @@
-//Constantes Sensor
-const int trigPin = 12;
-const int echoPin = 13;
 
-float duration, distance;
-float max_distance = 20;
-//Constantes Motor
-const int controlPin1 = 2;
-const int controlPin2 = 3;
-const int enablePin = 9;
-int motorSpeed = 50;
+const int motorPin1 = 5;  // Motor control pin 1
+const int motorPin2 = 6;  // Motor control pin 2
+const int motorEnable = 9; // Motor speed control (PWM)
+
+String lastCommand = "";  // Store last received command
 
 void setup() {
-  pinMode(controlPin1, OUTPUT);
-  pinMode(controlPin2, OUTPUT);
-  pinMode(enablePin, OUTPUT);
-  digitalWrite(enablePin, LOW);
-  pinMode(trigPin, OUTPUT);
-  pinMode(echoPin, INPUT);
-  digitalWrite(controlPin1, HIGH);
-  digitalWrite(controlPin2, LOW);
+    Serial.begin(115200);  // Match baud rate with Python script
+    pinMode(motorPin1, OUTPUT);
+    pinMode(motorPin2, OUTPUT);
+    pinMode(motorEnable, OUTPUT);
+    
+    // Ensure motor is stopped initially
+    digitalWrite(motorPin1, LOW);
+    digitalWrite(motorPin2, LOW);
+    analogWrite(motorEnable, 0);
 }
 
 void loop() {
-  //distance = detectObject();
-  //if (distance <= max_distance){
-  startMotor();
-  //}
-  delay(5000);
+    if (Serial.available() > 0) {
+        String received = Serial.readStringUntil('\n');
+        received.trim(); // Remove any unwanted newline characters
+        Serial.print("Received: ");
+        Serial.println(received);
+        
+        if (received != lastCommand) {  // Only execute if command is different
+            lastCommand = received;
+            
+            if (received == "plastic") {
+                turnMotorClockwise();
+            } else if (received == "paper") {
+                turnMotorClockwise();
+            } else {
+                stopMotor();
+            }
+        }
+    }
 }
 
-float detectObject(){
-  digitalWrite(trigPin, LOW);
-  delayMicroseconds(2);
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
-
-  duration = pulseIn(echoPin, HIGH);
-  distance = (duration*.0343)/2;
-  Serial.print("Distance: ");
-  Serial.println(distance);
-  return distance;
+void turnMotorClockwise() {
+    digitalWrite(motorPin1, LOW);
+    digitalWrite(motorPin2, HIGH);
+    analogWrite(motorEnable, 250);  // Adjust speed if needed
+    Serial.println("Motor turning clockwise (plastic detected)");
+    delay(950); // Run for 2 seconds
+    stopMotor();
 }
 
-void startMotor(){
-  analogWrite(enablePin, motorSpeed);
-  delay(2000);
-  analogWrite(enablePin, 0);
+
+
+void stopMotor() {
+    analogWrite(motorEnable, 0);
+    Serial.println("Motor stopped");
 }
