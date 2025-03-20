@@ -8,7 +8,7 @@ BAUD_RATE = 115200  # Match the baud rate with OpenMV and Arduino
 
 # Initialize counters for labels
 label_counts = {"plastic": 0, "paper": 0}
-TARGET_COUNT = 10  # Number of detections required to trigger sending data to Arduino
+TARGET_COUNT = 6  # Number of detections required to trigger sending data to Arduino
 
 def forward_data():
     try:
