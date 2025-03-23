@@ -12,7 +12,7 @@ BAUD_RATE = 115200  # Match the baud rate with OpenMV and Arduino
 
 # Gotify Configuration (Replace with actual details)
 GOTIFY_TOKEN = "AwDGy-7W-EjtwFD"
-GOTIFY_URL = f"http://192.168.178.219/message?token={GOTIFY_TOKEN}"
+GOTIFY_URL = f"http://192.168.165.219/message?token={GOTIFY_TOKEN}"
 
 # Initialize counters for labels
 label_counts = {"plastic": 0, "paper": 0}
