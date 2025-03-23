@@ -81,7 +81,8 @@ def forward_data():
                                 print(f"Sent to OpenMV: ready")
 
                                 # Reset the counter for the label
-                                label_counts[label] = 0
+                                label_counts["plastic"] = 0  # Reset plastic count as well
+                                label_counts["paper"] = 0  # Reset paper count as well
                                 actual_garbage[label] += 1  # Increase garbage count for specific material
 
                     except ValueError:
