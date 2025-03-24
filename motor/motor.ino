@@ -1,6 +1,6 @@
 
-const int motorPin1 = 5;  // Motor control pin 1
-const int motorPin2 = 6;  // Motor control pin 2
+const int motorPin1 = 2;  // Motor control pin 1
+const int motorPin2 = 3;  // Motor control pin 2
 const int motorEnable = 9; // Motor speed control (PWM)
 
 String lastCommand = "";  // Store last received command
@@ -41,7 +41,7 @@ void loop() {
 void turnMotorClockwise() {
     digitalWrite(motorPin1, LOW);
     digitalWrite(motorPin2, HIGH);
-    analogWrite(motorEnable, 250);  // Adjust speed if needed
+    analogWrite(motorEnable, 220);  // Adjust speed if needed
     Serial.println("Motor turning clockwise (plastic detected)");
     delay(4000); // Run for 2 seconds
     stopMotor();
@@ -50,7 +50,7 @@ void turnMotorClockwise() {
 void turnMotorClockwise2() {
     digitalWrite(motorPin1, LOW);
     digitalWrite(motorPin2, HIGH);
-    analogWrite(motorEnable, 250);  // Adjust speed if needed
+    analogWrite(motorEnable, 220);  // Adjust speed if needed
     Serial.println("Motor turning clockwise (plastic detected)");
     delay(2000); // Run for 2 seconds
     stopMotor();

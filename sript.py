@@ -16,7 +16,7 @@ GOTIFY_URL = f"http://192.168.165.219/message?token={GOTIFY_TOKEN}"
 
 # Initialize counters for labels
 label_counts = {"plastic": 0, "paper": 0}
-TARGET_COUNT = 6  # Number of detections required to trigger sending data to Arduino
+TARGET_COUNT = 4  # Number of detections required to trigger sending data to Arduino
 
 # Separate actual garbage counters
 actual_garbage = {"plastic": 0, "paper": 0}
