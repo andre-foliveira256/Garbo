@@ -41,7 +41,7 @@ void loop() {
 void turnMotorClockwise() {
     digitalWrite(motorPin1, LOW);
     digitalWrite(motorPin2, HIGH);
-    analogWrite(motorEnable, 220);  // Adjust speed if needed
+    analogWrite(motorEnable, 250);  // Adjust speed if needed
     Serial.println("Motor turning clockwise (plastic detected)");
     delay(4000); // Run for 2 seconds
     stopMotor();
@@ -50,7 +50,7 @@ void turnMotorClockwise() {
 void turnMotorClockwise2() {
     digitalWrite(motorPin1, LOW);
     digitalWrite(motorPin2, HIGH);
-    analogWrite(motorEnable, 220);  // Adjust speed if needed
+    analogWrite(motorEnable, 250);  // Adjust speed if needed
     Serial.println("Motor turning clockwise (plastic detected)");
     delay(2000); // Run for 2 seconds
     stopMotor();
