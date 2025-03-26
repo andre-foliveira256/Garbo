@@ -12,7 +12,7 @@ BAUD_RATE = 115200  # Match the baud rate with OpenMV and Arduino
 
 # Gotify Configuration (Replace with actual details)
 GOTIFY_TOKEN = "AwDGy-7W-EjtwFD"
-GOTIFY_URL = f"http://192.168.165.219/message?token={GOTIFY_TOKEN}"
+GOTIFY_URL = f"http://192.168.144.219/message?token={GOTIFY_TOKEN}"
 
 # Initialize counters for labels
 label_counts = {"plastic": 0, "paper": 0}
@@ -81,8 +81,8 @@ def forward_data():
                                 print(f"Sent to OpenMV: ready")
 
                                 # Reset the counter for the label
-                                label_counts["plastic"] = 0  # Reset plastic count as well
-                                label_counts["paper"] = 0  # Reset paper count as well
+                                label_counts["plastic"] = 0
+                                label_counts["paper"] = 0
                                 actual_garbage[label] += 1  # Increase garbage count for specific material
 
                     except ValueError:
