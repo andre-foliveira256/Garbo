@@ -28,9 +28,9 @@ void loop() {
             lastCommand = received;
             
             if (received == "plastic") {
-                turnMotorClockwise2();
+                turnMotorClockwisePlastic();
             } else if (received == "paper") {
-                turnMotorClockwise();
+                turnMotorClockwisePaper();
             } else {
                 stopMotor();
             }
@@ -38,21 +38,21 @@ void loop() {
     }
 }
 
-void turnMotorClockwise() {
+void turnMotorClockwisePlastic() {
     digitalWrite(motorPin1, LOW);
     digitalWrite(motorPin2, HIGH);
     analogWrite(motorEnable, 250);  // Adjust speed if needed
-    Serial.println("Motor turning clockwise (plastic detected)");
-    delay(4000); // Run for 2 seconds
+    Serial.println("Motor turning clockwise 6 seconds (plastic detected)");
+    delay(6000); // Run for 6 seconds
     stopMotor();
 }
 
-void turnMotorClockwise2() {
+void turnMotorClockwisePaper() {
     digitalWrite(motorPin1, LOW);
     digitalWrite(motorPin2, HIGH);
     analogWrite(motorEnable, 250);  // Adjust speed if needed
-    Serial.println("Motor turning clockwise (plastic detected)");
-    delay(2000); // Run for 2 seconds
+    Serial.println("Motor turning clockwise 4 (paper detected)");
+    delay(4000); // Run for 4 seconds
     stopMotor();
 }
 
