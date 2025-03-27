@@ -54,7 +54,7 @@ These instructions will get you a copy/replication of the project up and running
 
 Here's an image of the connected circuit:
 
-![Circuit Image](/IMG_20250327_011913.jpg)
+![Circuit Image](/C04_solution/IMG_20250327_011913.jpg)
 
 In this we can notice the entries used on the arduino for power in this case the 3v and 5v options and also the usage of the pins 9 for the enabling of the motor and also to control the speeds to which the DC motor would spin and the pins 1 and 2 to control the orientation of the rotation.
 
