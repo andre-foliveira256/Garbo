@@ -48,39 +48,41 @@ These instructions will get you a copy/replication of the project up and running
 
 ### Assembly Instructions
 
-Describe step-by-step assembly instructions.
 
-When necessary, and especially when wiring is involved, include diagrams/photos.
 
-First it is needed to connect the arduino to the DC motor
+### Step 1: Connect the Arduino to the DC Motor
 
-Here's an image of the circuits connected:
+Here's an image of the connected circuit:
 
 ![Circuit Image](/IMG_20250327_011913.jpg)
 
+### Step 2: Connect the Arduino to the Raspberry Pi
 
-Then connect the arduino to the raspberry pie throw their usb ports 
+Connect the Arduino to the Raspberry Pi via their USB ports.
 
-Finally connect the nicla vision to the raspberry pie using a micro usb to usb 3.0 cable conneting to the raspberry to another free usb port.
+### Step 3: Connect the Nicla Vision to the Raspberry Pi
 
+Use a micro-USB to USB 3.0 cable to connect the Nicla Vision to an available USB port on the Raspberry Pi.
 
+---
 
-### Software Prerequisites
+## Software Prerequisites
 
-In this section include detailed instructions for installing additiona software the application is dependent upon (such as PostgreSQL database, for example) being these necessary to make the project work on a raspberry pie 4 model B meaning it is arm based.
+This section provides detailed instructions for installing the additional software required for the application to work on a Raspberry Pi 4 Model B (ARM-based).
 
-python 3.11.2
-```
-If not already installed on the raspberry pie operating system here's the commands
+### Install Python 3.11.2
 
-# Adding the Deadsnakes PPA
-$ sudo add-apt-repository ppa:deadsnakes/ppa
+If Python 3.11.2 is not already installed on your Raspberry Pi OS, use the following commands:
 
-# Updating the package database
-$ sudo apt update
+```sh
+# Add the Deadsnakes PPA
+sudo add-apt-repository ppa:deadsnakes/ppa
 
-# Installing the Python 3.11
-$ sudo apt install python3.11
+# Update the package database
+sudo apt update
+
+# Install Python 3.11
+sudo apt install python3.11
 ```
 
 
@@ -99,25 +101,48 @@ $ chmod +x gotify-linux-arm64
 
 ### Installation
 
-Step-by-step instructions on building and running the application on the testing environment.
+Follow these step-by-step instructions to build and run the application in the testing environment.
 
 To install the raspberry pie OS follow the specific tutorial:
 
 https://www.youtube.com/watch?v=jLff_K39qL4
 
-To setup the code for the arduino start first to open the arduino IDE and then open the [code of the motor](/motor/motor.ino) then connect the arduino throw the usb to your personal computer and compile the code to the system with that done you just need to take the cable out and reconnect to the raspberry pie.
 
-For the camera you connect it also to your personal computer and then copy the [detection code](/câmera/Object_detection_send_data.py) and also copy to the camera da labels file [labels file](/câmera/labels.txt) and the tflite file [tflite file](/câmera/trained.tflite) so the trained model is deployed on the camera and the detection code works.
+### Step 2: Set Up the Arduino Code
 
-Since this project depends on the host of the internet that is in our case one of the colleagues phones the ip changes randomly being that the raspberry pie also will have always a different ip so to start we need to first:
+1. Open the **Arduino IDE**.
+2. Open the **motor control code**.
+3. Connect the **Arduino** to your personal computer via **USB**.
+4. Compile and **upload the code**.
+5. Disconnect the **Arduino** from your PC and reconnect it to the **Raspberry Pi**.
 
-Connect the computer that is going to connect to the raspberry to the internet where the raspberry is connected to
+---
 
-Then do the following command on your computer:
-```
-arp -a
-```
-It will present as type of output like this one:
+### Step 3: Set Up the Camera
+
+1. Connect the **Nicla Vision** to your PC.
+2. Copy the following files to the camera:
+   - **Object detection script**
+   - **Labels file**
+   - **Trained model**
+3. Once copied, **disconnect** the camera from your PC and **connect it to the Raspberry Pi**.
+
+
+## Connecting to the Raspberry Pi Over the Network  
+
+Since the **Raspberry Pi** gets a **dynamic IP address** assigned by the host's internet connection (in this case, a colleague’s phone), follow these steps to find and connect to it.  
+
+---
+
+### Step 1: Find the Raspberry Pi's IP Address  
+
+1. Connect your **computer** to the **same network** as the Raspberry Pi.  
+2. Run the following command on your computer:  
+
+  ```sh
+   arp -a
+  ```
+3. The output will look something like this:
 
 Interface: 192.168.234.179 --- 0x7
   Internet Address      Physical Address      Type
@@ -145,33 +170,40 @@ Interface: 172.17.192.1 --- 0x4f
   224.0.0.251           01-00-5e-00-00-fb     static
   239.255.255.250       01-00-5e-7f-ff-fa     static
 
-Then taking the information we have of this file we can connect to the raspberry pie using ssh being always his ip address ended on 219
+4. Identify the Raspberry Pi’s IP address. It will always end in 219.
 
-So in this example we need to run two terminals using ssh.
+---
 
-Being one to start the gotify and another one to start the script
+### Step 3.2: Connect to the Raspberry Pi via SSH  
 
-Assuming you unzip the gotify in the root
+Start each terminal by using, in case of the example provided the following on a personal computer connected to the 
+cellphone internet hotspot:
+
+```sh
+ssh 192.168.234.219
 ```
+
+Use **two terminal sessions**:  
+
+#### **1. Start Gotify**  
+
+```sh
 sudo ./gotify-linux-arm64
-
 ```
 
-On the other terminal do the following 
+#### **2. Start the Script**  
 
-1º Execute the script that will ask for the ip address of the machine in question being based on what was explained previously
-
-```
+```sh
 python3 script.py
 ```
 
-Should present this:
+The script will prompt for the **Gotify server IP**:  
 
 ```
 Enter the IP address of the Gotify server:
 ```
 
-Being for the example presented the 192.168.234.219
+Enter the **Raspberry Pi's IP address** (e.g., `192.168.234.219`).  
 
 Then it is possible to see the camera processing its video capture and consequently its classification of the data also providing information when a notification is sent to the user connected to the raspberry:
 
@@ -505,14 +537,11 @@ With this it is possible to verify that the project is fully functional
 
 * **Luís Filipe Pedro Marques** - *Setup Creator* - [PurpleBooth](https://github.com/Pacten15/)
 
-* **Gustavo Manuel Cabral de Mascarenhas Diogo**  - *Hardware Designer* - [PurpleBooth](https://github.com/Pacten15/)
+* **Gustavo Manuel Cabral de Mascarenhas Diogo**  - *Hardware Designer and Report Writer* - [PurpleBooth](https://github.com/GMD433)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **André Ferreira de Oliveira** - *Hardware Designer and Arduino setup* - [PurpleBooth](https://github.com/andre-foliveira256)
 
-### Versioning
-
-We use [SemVer](http://semver.org/) for versioning. 
-For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* **Jorge Cordeiro Hristovsky** - *Arduino setup and Report writer* - 
 
 ### License
 
@@ -524,6 +553,5 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ### Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* The edge impulse creators 
+* The content creators that provided insight on how to setup the raspberry pie, to configure the arduino and many more techniques.
