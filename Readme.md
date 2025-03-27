@@ -49,12 +49,13 @@ These instructions will get you a copy/replication of the project up and running
 ### Assembly Instructions
 
 
-
 ### Step 1: Connect the Arduino to the DC Motor
 
 Here's an image of the connected circuit:
 
 ![Circuit Image](/IMG_20250327_011913.jpg)
+
+In this we can notice the entries used on the arduino for power in this case the 3v and 5v options and also the usage of the pins 9 for the enabling of the motor and also to control the speeds to which the DC motor would spin and the pins 1 and 2 to control the orientation of the rotation.
 
 ### Step 2: Connect the Arduino to the Raspberry Pi
 
@@ -122,9 +123,9 @@ https://www.youtube.com/watch?v=jLff_K39qL4
 
 1. Connect the **Nicla Vision** to your PC.
 2. Copy the following files to the camera:
-   - **Object detection script**
-   - **Labels file**
-   - **Trained model**
+   - **Object detection script** [code](/câmera/Object_detection_send_data.py)
+   - **Labels file** [code](/câmera/labels.txt)
+   - **Trained model** [code](/câmera/trained.tflite)
 3. Once copied, **disconnect** the camera from your PC and **connect it to the Raspberry Pi**.
 
 
