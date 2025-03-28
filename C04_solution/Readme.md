@@ -37,7 +37,7 @@ This section outlines the technologies used in the project, including hardware c
 - [Python](https://www.python.org/) - Main programming language used to program the code of the camera [camera code](/C04_solution/camera/Object_detection_send_data.py) and the script that allows the communication between the camera and the arduino [script](/C04_solution/script.py)
 - [OpenMV](https://openmv.io/) - IDE used to program the code of the camera
 - [Edge Impulse](https://www.edgeimpulse.com/) - Machine learning model training used to train the camera 
-- [Arduino Programming Language](https://docs.arduino.cc/language-reference/) - C/C++ adaptation used to 
+- [Arduino Programming Language](https://docs.arduino.cc/language-reference/) - C/C++ adaptation used to program the arduino and consequently the DC motor
 - [Arduino IDE](https://www.arduino.cc/en/software) - Used to program the behaviour of the dc motor [motor code](/C04_solution/motor/motor.ino)
 - [Gotify](https://gotify.net/)(https://github.com/gotify) - Used to implement the notification aspect of the project
 - [Visual Studio](https://code.visualstudio.com/) - Used to create and edit the script code
