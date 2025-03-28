@@ -129,6 +129,10 @@ https://www.youtube.com/watch?v=jLff_K39qL4
    - **Trained model** [code](/C04_solution/camera/trained.tflite)
 3. Once copied, **disconnect** the camera from your PC and **connect it to the Raspberry Pi**.
 
+The Connection layout should be as the following image:
+
+![Connection Image](/C04_solution/IMG_20250320_040116.jpg)
+
 
 ## Connecting to the Raspberry Pi Over the Network  
 
@@ -537,13 +541,13 @@ With this it is possible to verify that the project is fully functional
 
 ### Authors
 
-* **Luís Filipe Pedro Marques** - *Setup Creator* - [PurpleBooth](https://github.com/Pacten15/)
+* **Luís Filipe Pedro Marques** - *Setup Creator* - [Git Profile](https://github.com/Pacten15/)
 
-* **Gustavo Manuel Cabral de Mascarenhas Diogo**  - *Hardware Designer and Report Writer* - [PurpleBooth](https://github.com/GMD433)
+* **Gustavo Manuel Cabral de Mascarenhas Diogo**  - *Hardware Designer and Report Writer* - [Git Profile](https://github.com/GMD433)
 
-* **André Ferreira de Oliveira** - *Hardware Designer and Arduino setup* - [PurpleBooth](https://github.com/andre-foliveira256)
+* **André Ferreira de Oliveira** - *Hardware Designer and Arduino setup* - [Git Profile](https://github.com/andre-foliveira256)
 
-* **Jorge Cordeiro Hristovsky** - *Arduino setup and Report writer* - 
+* **Jorge Cordeiro Hristovsky** - *Arduino setup and Report writer* - [Git Profile](https://github.com/dino-fan777)
 
 ### License
 
