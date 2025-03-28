@@ -34,12 +34,13 @@ This section outlines the technologies used in the project, including hardware c
 ### **Software**  
 
 - [Raspberry Pi OS](https://www.raspberrypi.com/software/) - Operating System  
-- [Python](https://www.python.org/) - Main programming language used to program the code of the camera [camera code](/câmera/Object_detection_send_data.py) and the script that allows the communication between the camera and the arduino [script](/script.py)
+- [Python](https://www.python.org/) - Main programming language used to program the code of the camera [camera code](/C04_solution/camera/Object_detection_send_data.py) and the script that allows the communication between the camera and the arduino [script](/C04_solution/script.py)
 - [OpenMV](https://openmv.io/) - IDE used to program the code of the camera
 - [Edge Impulse](https://www.edgeimpulse.com/) - Machine learning model training used to train the camera 
-- [Arduino Programming Language](https://docs.arduino.cc/language-reference/) - C/C++ adaptation used to 
-- [Arduino IDE](https://www.arduino.cc/en/software) - Used to program the behaviour of the dc motor [motor code](/motor/motor.ino)
+- [Arduino Programming Language](https://docs.arduino.cc/language-reference/) - C/C++ adaptation used to program the arduino and consequently the DC motor
+- [Arduino IDE](https://www.arduino.cc/en/software) - Used to program the behaviour of the dc motor [motor code](/C04_solution/motor/motor.ino)
 - [Gotify](https://gotify.net/)(https://github.com/gotify) - Used to implement the notification aspect of the project
+- [Visual Studio](https://code.visualstudio.com/) - Used to create and edit the script code
 ---
 
 ## Getting Started
@@ -53,7 +54,7 @@ These instructions will get you a copy/replication of the project up and running
 
 Here's an image of the connected circuit:
 
-![Circuit Image](/IMG_20250327_011913.jpg)
+![Circuit Image](/C04_solution/IMG_20250327_011913.jpg)
 
 In this we can notice the entries used on the arduino for power in this case the 3v and 5v options and also the usage of the pins 9 for the enabling of the motor and also to control the speeds to which the DC motor would spin and the pins 1 and 2 to control the orientation of the rotation.
 
@@ -123,10 +124,14 @@ https://www.youtube.com/watch?v=jLff_K39qL4
 
 1. Connect the **Nicla Vision** to your PC.
 2. Copy the following files to the camera:
-   - **Object detection script** [code](/câmera/Object_detection_send_data.py)
-   - **Labels file** [code](/câmera/labels.txt)
-   - **Trained model** [code](/câmera/trained.tflite)
+   - **Object detection script** [code](/C04_solution/camera/Object_detection_send_data.py)
+   - **Labels file** [code](/C04_solution/camera/labels.txt)
+   - **Trained model** [code](/C04_solution/camera/trained.tflite)
 3. Once copied, **disconnect** the camera from your PC and **connect it to the Raspberry Pi**.
+
+The Connection layout should be as the following image:
+
+![Connection Image](/C04_solution/IMG_20250320_040116.jpg)
 
 
 ## Connecting to the Raspberry Pi Over the Network  
@@ -536,13 +541,13 @@ With this it is possible to verify that the project is fully functional
 
 ### Authors
 
-* **Luís Filipe Pedro Marques** - *Setup Creator* - [PurpleBooth](https://github.com/Pacten15/)
+* **Luís Filipe Pedro Marques** - *Setup Creator* - [Git Profile](https://github.com/Pacten15/)
 
-* **Gustavo Manuel Cabral de Mascarenhas Diogo**  - *Hardware Designer and Report Writer* - [PurpleBooth](https://github.com/GMD433)
+* **Gustavo Manuel Cabral de Mascarenhas Diogo**  - *Hardware Designer and Report Writer* - [Git Profile](https://github.com/GMD433)
 
-* **André Ferreira de Oliveira** - *Hardware Designer and Arduino setup* - [PurpleBooth](https://github.com/andre-foliveira256)
+* **André Ferreira de Oliveira** - *Hardware Designer and Arduino setup* - [Git Profile](https://github.com/andre-foliveira256)
 
-* **Jorge Cordeiro Hristovsky** - *Arduino setup and Report writer* - 
+* **Jorge Cordeiro Hristovsky** - *Arduino setup and Report writer* - [Git Profile](https://github.com/dino-fan777)
 
 ### License
 
