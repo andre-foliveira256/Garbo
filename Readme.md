@@ -105,9 +105,9 @@ $ chmod +x gotify-linux-arm64
 
 Follow these step-by-step instructions to build and run the application in the testing environment.
 
-To install the raspberry pie OS follow the specific tutorial:
+To install the raspberry pie OS follow the specific tutorial and if the steps regarding the network do not work follow the rest of this tutorial:
 
-https://www.youtube.com/watch?v=jLff_K39qL4
+https://www.youtube.com/watch?v=m6aS9YF-0xo
 
 
 ### Step 2: Set Up the Arduino Code
